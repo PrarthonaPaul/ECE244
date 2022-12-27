@@ -1,0 +1,13 @@
+g++ -std=c++11 -c -g Parser.cpp -o Parser.o
+g++ -std=c++11 -c -g Shape.cpp -o Shape.o
+g++ -std=c++11 -c -g ShapeNode.cpp -o ShapeNode.o
+g++ -std=c++11 -c -g ShapeList.cpp -o ShapeList.o
+g++ -std=c++11 -c -g GroupNode.cpp -o GroupNode.o
+g++ -std=c++11 -c -g GroupList.cpp -o GroupList.o
+g++ -std=c++11 Parser.o Shape.o ShapeNode.o ShapeList.o GroupNode.o GroupList.o -o Parser.exe
+Parser.o: In function `main':
+/u/d/paulprar/ECE244/lab4/Parser.cpp:35: undefined reference to `GroupList::GroupList()'
+/u/d/paulprar/ECE244/lab4/Parser.cpp:38: undefined reference to `GroupNode::GroupNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+/u/d/paulprar/ECE244/lab4/Parser.cpp:39: undefined reference to `GroupList::insert(GroupNode*)'
+collect2: error: ld returned 1 exit status
+gmake: *** [Makefile:5: Parser.exe] Error 1

@@ -1,0 +1,22 @@
+g++  -Wall -O0 -g convert.cpp -o convert
+convert.cpp: In function ‘int main()’:
+convert.cpp:37:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+    if( scale != DegF && scale != Degf &&
+    ^~
+convert.cpp:42:7: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+       return -1
+       ^~~~~~
+convert.cpp:42:16: error: expected ‘;’ before ‘}’ token
+       return -1
+                ^
+                ;
+    }
+    ~            
+convert.cpp: At global scope:
+convert.cpp:46:4: error: ‘cout’ does not name a type
+    cout << "\n" << inTemp << " " << scale << " is equivalent to:\n"
+    ^~~~
+convert.cpp:52:1: error: expected declaration before ‘}’ token
+ }
+ ^
+gmake: *** [Makefile:2: convert] Error 1
